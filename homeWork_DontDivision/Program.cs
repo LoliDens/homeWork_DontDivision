@@ -12,26 +12,18 @@ namespace homeWork_DontDivision
         {
             Random random = new Random();
             int lowerLimitRandom = 1;
-            int upperLimitRandom = 28;
-            int number = random.Next(lowerLimitRandom, upperLimitRandom);
+            int upperLimitRandom = 27;
+            int number = random.Next(lowerLimitRandom, upperLimitRandom + 1);
             int upperLimitCycle = 999;
             int lowerLimitCycle = 100;
             int amountMultiples = 0;
-            int multiples;
-
-            for (int i = lowerLimitCycle; i <= upperLimitCycle; i++) 
+            
+            for (int i = 0; i <= upperLimitCycle; i += number) 
             {
-                multiples = i;
-
-                while (multiples > 0) 
+                if (i >= lowerLimitCycle) 
                 {
-                    multiples -= number;
+                    amountMultiples++;
                 }
-
-                if (multiples == 0) 
-                {
-                    amountMultiples += 1;
-                }            
             }
 
             Console.WriteLine($"Количество трехзначных натуральных чисел, которые кратны {number}: {amountMultiples}");
